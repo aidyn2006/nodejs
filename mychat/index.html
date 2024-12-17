@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+</head>
+<body>
+<h1>Welcome to My Chat Application</h1>
+<form id="chat-form">
+    <input type="text" id="message" placeholder="Enter your message" required />
+    <button type="submit">Send</button>
+</form>
+<div id="messages"></div>
+
+<script>
+    document.getElementById('chat-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = document.getElementById('message').value;
+        const messagesDiv = document.getElementById('messages');
+        messagesDiv.innerHTML += `<p>${message}</p>`;
+        document.getElementById('message').value = '';
+    });
+</script>
+</body>
+</html>
